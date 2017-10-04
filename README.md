@@ -14,4 +14,4 @@
   (this is to run the solution in the port we indicated in the UI)
 - open localhost:4200 in your browser
 
-_Note: By default db use is localdb, if you want to use a different DB, you can change the connection in the CoffeeMachineDbContext.cs file under EF Project_
+_Note: By default db used was localdb, if you want to use a different DB, you can change the connection in the CoffeeMachineDbContext.cs file under EF Project_
