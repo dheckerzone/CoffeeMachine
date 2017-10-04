@@ -1,0 +1,36 @@
+﻿<div class="container-fluid">
+  <h3>Order Here</h3>
+  <hr />
+  <div class="container-fluid">
+    <div class="col-md-1">
+      <label class="lblPantry">Pantry</label>
+    </div>
+    <div class="col-md-3">
+      <select class="form-control" (change)="onSelectedPantryChange($event.target.value)">
+        <option *ngFor="let o of Order?.officePantryList" value="{{o.pantry}}">{{o.pantry}}</option>
+      </select>
+    </div>
+  </div>
+  <hr />
+  <div class="container-fluid">
+    <h4>Supplies <small><a href="#" (click)="refillSupplies($event)">refill stocks</a></small></h4>
+    <div class="col-md-3">
+      <canvas baseChart
+              [data]="pieChartDataSupplies"
+              [labels]="pieChartLabelsSupplies"
+              [chartType]="pieChartType"></canvas>
+    </div>
+  </div>
+  <hr />
+  <div class="container-fluid">
+    <h4>Select a coffee</h4>
+    <div class="col-md-3">
+      <div *ngFor="let c of CoffeeList" class="btnContainer">
+        <div>
+          <button [ngClass]="{'btn-danger': getRemainingCoffee(c.name) == 0}" class="btn btn-default btn-block" value="{{c.name}}" (click)="getCoffee(c.name)"><span class="pull-left">{{c.name}}</span><span class="pull-right small">remaining: {{getRemainingCoffee(c.name)}}</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
